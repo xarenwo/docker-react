@@ -5,4 +5,4 @@ before_install:
   - docker build -t xarentek/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run xarentek/docker-react npm run test -- --coverage
+  - docker run -e CI=true xarentek/docker-react npm run test -- --coverage
