@@ -11,7 +11,7 @@ function App() {
         </p>
         <h1> This is an extra text </h1>
         <h3>Test 2</h3>
-        <h2>Test refresh</h2>
+        <h2>Test 17 oct</h2>
         <a
           className="App-link"
           href="https://reactjs.org"
