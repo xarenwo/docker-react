@@ -2,20 +2,20 @@ sudo: required
 services:
   - docker
 before_install:
-  - docker build -t xarentek/docker-reactv1 -f Dockerfile.dev .
+  - docker build -t xarentek/docker-react-dev -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true xarentek/docker-reactv1 npm run test -- --coverage
+  - docker run -e CI=true xarentek/docker-react-dev npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
   access_key_id: "$aws_access_key"
   secret_access_key: "$aws_secret_key"
-  region: "us-west-2"
-  app: "dockerxarentek-v1app"
-  env: "dockerxarentek-v1env"
-  bucket_name: "elasticbeanstalk-us-west-2-942470232070"
-  bucket_path: "dockerxarentek-v1app"
+  region: "eu-central-1"
+  app: "docker-react"
+  env: "Dockerreact-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-942470232070"
+  bucket_path: "docker-react"
   on:
     branch: master
 after_deploy:
