@@ -18,6 +18,3 @@ deploy:
   bucket_path: "docker-react"
   on:
     branch: master
-after_deploy:
-  - docker ps --all
-  - service nginx status
