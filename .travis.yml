@@ -9,12 +9,17 @@ script:
 
 deploy:
   provider: elasticbeanstalk
+  access_key_id:
+    secure:  "$aws_access_key"
+  secret_access_key:
+    secure: "$aws_secret_key"
   region: "us-west-2"
-  app: "docker-react"
-  env: "Dockerreact-env"
+  app: "dockerxarentek-v1app"
+  env: "dockerxarentek-v1env"
   bucket_name: "elasticbeanstalk-us-west-2-942470232070"
-  bucket_path: "docker-react"
+  bucket_path: "dockerxarentek-v1app"
   on:
     branch: master
-  access_key_id: "$aws_access_key"
-  secret_access_key: "$aws_secret_key"
+  after_deploy:
+    - docker ps --all
+    - service nginx status
