@@ -12,6 +12,7 @@ function App() {
         <h1> This is an extra text </h1>
         <h3>Test 2</h3>
         <h2>Test 17 oct</h2>
+        <h1>Sidechannel attacks</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
